@@ -1,182 +1,85 @@
-// EXERCISE 1
-/*
-INPUT : Parameter height 
+//1
+let n = 9;
 
-PROSES :
-1. pertama bikin variable untuk berapa n yang mau dibikin triangle, misalkan 3 nanti outputnya jadi 
-01
-02 03
-04 05 06
+for(let i = 1; i <= 10; i++){
 
-2. for loop dalam loop
+    n * i  
 
-
-OUTPUT :
-01
-02 03
-04 05 06 
-07 08 09 10
-*/
-
-let num = 4;
-
-function triangle(asw){
-
-    let msg = "";
-    let count = 1;
-
-    for(let i = 0; i < asw; i++){
-        console.log(i)
-
-        for(let j = 0; j <= i; j++){    // j <= i biar pola nya dinamis
-            console.log(j);
-
-            if(count > 9){
-                msg += `${count++} `;
-
-                console.log(msg);
-
-            } else {
-                msg += `0${count++} `;
-                console.log(msg)
-            }
-
-        }
-
-        msg += "\n";
-    }
-
-    return msg;
-}
-console.log(triangle(num));
-
-
-
-// EXERCISE 2
-
-/*
-INPUT : Parameter n buat looping
-bilangan yang habis di bagi 3 akan diganti dengan kata "fizz"
-bilangan yang habis di bagi 5 akan diganti dengan kata "buzz"
-bilangan yang habis di bagi 3 dan 5 akan diganti dengan kata "fizzbuzz"
-
-PROSES :
-
-OUTPUT : misalkan n = 20 -> 1 2 buzz 4 fizz 6 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 18 19 buzz
-*/
-
-let a = 20;+
-
-function FizzBuzz(n){
-    let psn = "";
-
-    for (i = 1; i <= n; i++){
-        console.log(i);
-
-        if (i % 3 == 0 && i % 5 == 0){
-            psn += "FizzBuzz";
-        } else if (i % 3 == 0){
-            psn += "Fizz";
-        } else if (i % 5 == 0){
-            psn += "Buzz";
-        } else {
-            psn += i;
-        }
-        psn += "\n";
-    }
-
-    return psn;
-
-}
-console.log(FizzBuzz(a))
-
-
-
-
-// EXERCISE 3
-
-/* 
-INPUT : Parameter weight dan height
-
-PROSES : 
-1. bikin varible buat menampung weight dan height
-2. bikin Rumus BIM 
-3. hasil BIM nanti di if else untuk keterangan
-
-OUPUT : misalkan hasil BMI = 20.5 maka "ideal"
-*/
-
-let berat = 90;
-let tinggi = 1.77;
-
-function Rumus(b, t){
-    const BMI = b / (t **2);
-    let keterangan = "";
-    
-    if(BMI < 18.5){
-        keterangan = "less weight";
-    } else if (BMI < 24.9){
-        keterangan = "Ideal";
-    } else if (BMI < 29.9){
-        keterangan = "Overweight";
-    } else if (BMI < 39.9){
-        keterangan = "Very Overweight";
-    } else {
-        keterangan = "Obestiy";
-    }
-
-    return keterangan;
-}
-console.log(Rumus(berat, tinggi));
-
-
-// EXERCISE 4   
-
-let arr = [5, 6, 7, 8, 9, 10];
-
-console.log(arr.length);
-
-let newArr = [];
-
-function removeOdd(before, after){
-
-    for(i = 1; i <= before.length; i++){ 
-        console.log(i);
-
-        if(before[i-1] % 2 == 0){
-            after.push(before[i-1])
-
-            console.log(after)
-        }
-    }
-    
-    return after;
+console.log(`${n} * ${i}`)
 }
 
-console.log(removeOdd(arr, newArr));
 
-// EXERCISE 5
+//Write a code to check whether a string is a palindrome or not.
+// CONTOH : KATAK jika di balik KATAK = TRUE || ROSA jika dibalik ASOR = FALSE
 
-let masuk = "zaman dahulu kala"
+let kata = "katak";
+let kebalikan = kata.split("").reverse().join("")  //split("") -> ini tidak di spasi karena mau split di var kata, jika di spasi yang di split adalah kata yang ada spasi
 
-function pemisah(after){
-    
-    let inputArr = [];
-    let input = "";
+console.log(kebalikan)
 
-    for(let i = 0; i < after.length; i++){
-        if (after[i] !== " "){
-            input += after[i];
-        } else {
-            inputArr.push(input);
-            input = "";
-        }
-
-        if (i == after.length - 1){
-            inputArr.push(input);
-        }
-    }
-
-    return inputArr;
+if( kata == kebalikan){
+    console.log(`${kebalikan} = palindrome`);
+} else {
+    console.log(`${kebalikan} = bukan palindrome`);
 }
-console.log(pemisah(masuk));
+
+// Write a code to convert centimeter to kilometer.
+// km -> hm -> dam -> m -> dm -> cm -> m
+
+let Cm = 100000;
+const Km = Cm / 100000;
+
+console.log(`${Cm} Centimeter = ${Km} Kilometer`);
+
+// Write a code to format number as currency (IDR) || Example : 1000 → “Rp. 1.000,00”
+
+let num = 11000;
+const formater = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+});
+
+console.log (formater.format(num));
+
+
+// Write a code to remove the first occurrence of a given “search string” from a string
+// Example : string = “Hello world”, search string = “ell” → “Ho world”
+
+
+// Write a code to capitalize the first letter of each word in a string || Example : “hello world” → “Hello World”
+
+let judul = "hello world";
+let capital = "";
+
+const ar = judul.split(" ");
+console.log(ar)
+
+for (i = 0; i < ar.length; i++){
+    console.log(i)
+
+    capital = capital + ar[i].toUpperCase().charAt(0) + ar[i].substring(1) + " ";
+
+}
+
+console.log(capital);
+
+
+//Write a code to reverse a string
+
+
+let kata1 = "purwadhika";
+let kebalikan1 = kata1.split("").reverse().join();
+
+console.log(kebalikan1)
+
+
+// atau
+
+
+let temp = "";
+
+for (let i = 0; i < kata1.length; i++){
+    temp += kata1[kata1.length - 1 - i];
+}
+
+console.log(temp);
