@@ -199,31 +199,31 @@ let pindah = function (json) {
     let tukar = {};
     let show = [];
 
-    json.forEach((item) => {
-        for (key in item) {
-            console.log(key);
-            console.log(item);
-            console.log(item[key]);
-            tukar[item[key]] = key;
+    // json.forEach((item) => {
+    //     for (key in item) {
+    //         console.log(key);
+    //         console.log(item);
+    //         console.log(item[key]);
+    //         tukar[item[key]] = key;
 
-        }
-    });
+    //     }
+    // });
 
     //atau bisa juga memakai yang dibawah
 
-    // for (let i = 0; i < json.length; i++) {
-    //     console.log(json.length);
-    //     console.log(json);
+    for (let i = 0; i < json.length; i++) {
+        console.log(json.length);
+        console.log(json);
 
-    //     for (let x in json[i]) {
-    //         console.log(x);
-    //         console.log(json[i]);
+        for (let x in json[i]) {
+            console.log(x);
+            console.log(json[i]);
 
-    //         tukar[json[i][x]] = x;
+            tukar[json[i][x]] = x;
 
-    //     }
+        }
 
-    // }
+    }
 
     show.push(tukar);
     return show;
@@ -237,7 +237,7 @@ console.log(pindah(bio));
 let num = 6;
 
 faktorial = function (num1) {
-    if (num1 === 0) {
+    if (num1 === 0) {   // untuk mengakhiri loopingan
         return 1;
     }
     console.log(num1);
